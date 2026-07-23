@@ -1,0 +1,1590 @@
+/* =====================================
+   KADRY MOSCOW
+   Luxury Wedding Gallery 2.0
+   STYLE CSS
+===================================== */
+
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    background:#080808;
+
+    color:#fff;
+
+    font-family:'Inter',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+img,
+video{
+
+    width:100%;
+
+    display:block;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+
+
+
+
+/* =====================================
+   PRELOADER
+===================================== */
+
+
+.preloader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050505;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    animation:loaderHide 2s forwards;
+
+}
+
+
+.logo-loader{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:55px;
+
+    letter-spacing:10px;
+
+    text-align:center;
+
+    color:#c8a66a;
+
+    animation:logoFade 1.5s infinite alternate;
+
+}
+
+
+@keyframes logoFade{
+
+    from{
+
+        opacity:.3;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes loaderHide{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        visibility:hidden;
+
+    }
+
+}
+
+
+
+
+
+
+/* =====================================
+   HERO
+===================================== */
+
+
+.hero{
+
+    height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+
+
+.hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    to bottom,
+
+    rgba(0,0,0,.35),
+
+    rgba(0,0,0,.8)
+
+    );
+
+}
+
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    animation:heroShow 2s ease;
+
+}
+
+
+
+@keyframes heroShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+.brand{
+
+    font-size:22px;
+
+    letter-spacing:12px;
+
+    color:#d2b277;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.small-title{
+
+    font-size:14px;
+
+    letter-spacing:7px;
+
+    color:#ddd;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:95px;
+
+    line-height:.9;
+
+    font-weight:400;
+
+}
+
+
+
+.date{
+
+    margin-top:40px;
+
+    font-size:18px;
+
+    letter-spacing:8px;
+
+    color:#ddd;
+
+}
+
+
+
+
+
+/* BUTTON */
+
+
+.luxury-btn{
+
+    display:inline-block;
+
+    margin-top:60px;
+
+    padding:20px 60px;
+
+    border:1px solid #c8a66a;
+
+    letter-spacing:4px;
+
+    font-size:14px;
+
+    transition:.5s;
+
+}
+
+
+
+.luxury-btn:hover{
+
+    background:#c8a66a;
+
+    color:#000;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+.scroll{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    letter-spacing:5px;
+
+    font-size:12px;
+
+    color:#ccc;
+
+}
+
+
+
+
+
+/* =====================================
+   GENERAL SECTIONS
+===================================== */
+
+
+.section{
+
+    padding:140px 8%;
+
+}
+
+
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.section-title span{
+
+    color:#c8a66a;
+
+    font-size:18px;
+
+}
+
+
+
+.section-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:60px;
+
+    font-weight:400;
+
+    letter-spacing:2px;
+
+}
+
+
+
+
+.description{
+
+    max-width:600px;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#aaa;
+
+    margin-bottom:70px;
+}
+
+
+/* =====================================
+   MAIN VIDEO
+===================================== */
+
+
+.main-video{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    position:relative;
+
+    border-radius:5px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 40px 100px rgba(0,0,0,.7);
+
+}
+
+
+.main-video video{
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+}
+
+
+
+
+.download{
+
+    display:block;
+
+    width:max-content;
+
+    margin:50px auto 0;
+
+    padding:20px 55px;
+
+    border:1px solid #c8a66a;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+    transition:.5s;
+
+}
+
+
+
+.download:hover{
+
+    background:#c8a66a;
+
+    color:#000;
+
+}
+
+
+
+
+
+/* =====================================
+   STORY SECTION
+===================================== */
+
+
+.story{
+
+    background:#0b0b0b;
+
+}
+
+
+
+.story-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+
+
+.story-item{
+
+    position:relative;
+
+    height:600px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+}
+
+
+
+.story-item img{
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+
+
+.story-item:after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(0,0,0,.85)
+
+    );
+
+}
+
+
+
+.story-item div{
+
+    position:absolute;
+
+    bottom:50px;
+
+    left:50px;
+
+    z-index:2;
+
+}
+
+
+
+.story-item h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:48px;
+
+    font-weight:400;
+
+}
+
+
+
+.story-item p{
+
+    margin-top:10px;
+
+    color:#c8a66a;
+
+    letter-spacing:3px;
+
+}
+
+
+
+
+.story-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   HIGHLIGHTS
+===================================== */
+
+
+.highlights{
+
+    background:#080808;
+
+}
+
+
+
+.highlight-video{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.6);
+
+}
+
+
+
+.highlight-video video{
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   GALLERY
+===================================== */
+
+
+.gallery{
+
+    background:#0b0b0b;
+
+}
+
+
+
+.gallery-grid{
+
+    columns:3;
+
+    column-gap:25px;
+
+}
+
+
+
+.gallery-grid img{
+
+    margin-bottom:25px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    transition:.6s;
+
+}
+
+
+
+.gallery-grid img:hover{
+
+    transform:scale(1.03);
+
+    filter:brightness(1.1);
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   REVIEWS
+===================================== */
+
+
+.reviews{
+
+    text-align:center;
+
+}
+
+
+
+.review-card{
+
+    max-width:800px;
+
+    margin:70px auto 40px;
+
+    padding:60px;
+
+    background:#111;
+
+    border:1px solid rgba(200,166,106,.15);
+
+}
+
+
+
+.stars{
+
+    color:#c8a66a;
+
+    font-size:25px;
+
+    letter-spacing:8px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.review-card p{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:35px;
+
+    line-height:1.5;
+
+}
+
+
+
+.review-card h3{
+
+    margin-top:30px;
+
+    color:#aaa;
+
+    font-size:18px;
+
+    font-weight:400;
+
+}
+
+
+
+
+
+.review-btn{
+
+    background:none;
+
+    color:white;
+
+    border:1px solid #c8a66a;
+
+    padding:18px 55px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+}
+
+
+
+.review-btn:hover{
+
+    background:#c8a66a;
+
+    color:black;
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   CONTACT
+===================================== */
+
+
+.contact{
+
+    text-align:center;
+
+    background:#050505;
+
+}
+
+
+
+.contact h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:70px;
+
+    font-weight:400;
+
+}
+
+
+
+.contact p{
+
+    color:#aaa;
+
+    margin:30px 0 60px;
+
+    font-size:20px;
+
+}
+
+
+
+
+.contact-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.contact-buttons a{
+
+    padding:18px 45px;
+
+    border:1px solid #c8a66a;
+
+    letter-spacing:3px;
+
+    transition:.5s;
+
+}
+
+
+
+.contact-buttons a:hover{
+
+    background:#c8a66a;
+
+    color:black;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+
+footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    background:#000;
+
+}
+
+
+
+.footer-logo{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:45px;
+
+    letter-spacing:10px;
+
+    color:#c8a66a;
+
+}
+
+
+
+footer p{
+
+    margin-top:30px;
+
+    color:#777;
+
+    letter-spacing:3px;
+
+    font-size:13px;
+
+}
+
+
+/* =====================================
+   SCROLL ANIMATION PREPARE
+===================================== */
+
+.section,
+.story-item,
+.gallery-grid img,
+.review-card{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s ease;
+
+}
+
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+
+
+/* =====================================
+   PHOTO LIGHT EFFECT
+===================================== */
+
+
+.gallery-grid img{
+
+    position:relative;
+
+}
+
+
+.gallery-grid img:hover{
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,.7);
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+
+@media(max-width:1200px){
+
+
+.hero h1{
+
+    font-size:75px;
+
+}
+
+
+.section-title h2{
+
+    font-size:50px;
+
+}
+
+
+.story-item{
+
+    height:500px;
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+
+.section{
+
+    padding:90px 6%;
+
+}
+
+
+
+.hero{
+
+    height:100svh;
+
+}
+
+
+
+.brand{
+
+    font-size:17px;
+
+    letter-spacing:7px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:55px;
+
+}
+
+
+
+.small-title{
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+}
+
+
+
+.date{
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+}
+
+
+
+.section-title{
+
+    display:block;
+
+}
+
+
+
+.section-title span{
+
+    display:block;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.section-title h2{
+
+    font-size:42px;
+
+}
+
+
+
+.description{
+
+    font-size:17px;
+
+}
+
+
+
+.story-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.story-item{
+
+    height:450px;
+
+}
+
+
+
+.story-item div{
+
+    left:30px;
+
+    bottom:35px;
+
+}
+
+
+
+.story-item h3{
+
+    font-size:38px;
+
+}
+
+
+
+.gallery-grid{
+
+    columns:2;
+
+}
+
+
+
+.review-card{
+
+    padding:35px 20px;
+
+}
+
+
+
+.review-card p{
+
+    font-size:27px;
+
+}
+
+
+
+.contact h2{
+
+    font-size:45px;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.logo-loader{
+
+    font-size:35px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+
+
+.luxury-btn{
+
+    padding:18px 35px;
+
+}
+
+
+
+.section-title h2{
+
+    font-size:34px;
+
+}
+
+
+
+.gallery-grid{
+
+    columns:1;
+
+}
+
+
+
+.gallery-grid img{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.story-item{
+
+    height:380px;
+
+}
+
+
+
+.story-item h3{
+
+    font-size:32px;
+
+}
+
+
+
+.contact-buttons{
+
+    flex-direction:column;
+
+}
+
+
+
+.contact-buttons a{
+
+    width:100%;
+
+}
+
+
+
+.footer-logo{
+
+    font-size:32px;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   CINEMATIC EFFECTS
+===================================== */
+
+
+.hero-video{
+
+    animation:zoomVideo 20s infinite alternate;
+
+}
+
+
+
+@keyframes zoomVideo{
+
+
+from{
+
+    transform:scale(1);
+
+}
+
+
+to{
+
+    transform:scale(1.08);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* GOLD LINE EFFECT */
+
+
+.section-title:after{
+
+    content:"";
+
+    height:1px;
+
+    width:120px;
+
+    background:#c8a66a;
+
+    display:block;
+
+    margin-left:20px;
+
+}
+
+
+
+
+
+
+
+/* SMOOTH BUTTON PRESS */
+
+
+a,
+button{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+
+
+
+/* DARK FILM GRAIN EFFECT */
+
+
+.hero:before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+
+    opacity:.25;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+
+
+
+
+
+
+/* SELECTION COLOR */
+
+
+::selection{
+
+    background:#c8a66a;
+
+    color:#000;
+
+}
+
+/* REVIEW FORM */
+
+.review-form{
+
+max-width:600px;
+
+margin:60px auto 0;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+
+
+.review-form input,
+.review-form textarea{
+
+
+background:#111;
+
+border:1px solid rgba(200,166,106,.3);
+
+color:white;
+
+padding:20px;
+
+font-size:16px;
+
+font-family:Inter,sans-serif;
+
+outline:none;
+
+
+}
+
+
+
+.review-form textarea{
+
+height:180px;
+
+resize:none;
+
+}
+
+
+
+.review-form input:focus,
+.review-form textarea:focus{
+
+border-color:#c8a66a;
+
+}
+
+
+
+.review-form button{
+
+
+background:#c8a66a;
+
+border:none;
+
+padding:20px;
+
+font-size:14px;
+
+letter-spacing:4px;
+
+cursor:pointer;
+
+transition:.4s;
+
+
+}
+
+
+
+.review-form button:hover{
+
+
+background:#e4c98c;
+
+
+}
+
+
+
+
+.review-form{
+
+max-width:600px;
+
+margin:50px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+
+.review-form input,
+.review-form textarea{
+
+background:#111;
+
+border:1px solid rgba(200,166,106,.4);
+
+padding:20px;
+
+color:white;
+
+font-size:16px;
+
+font-family:Inter,sans-serif;
+
+}
+
+
+
+.review-form textarea{
+
+height:160px;
+
+resize:none;
+
+}
+
+
+
+.review-form button{
+
+background:#c8a66a;
+
+border:none;
+
+padding:18px;
+
+letter-spacing:3px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+
+
+#reviewResult{
+
+color:#c8a66a;
+
+font-size:18px;
+
+}
+
+
+
+
+
