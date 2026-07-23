@@ -18,10 +18,8 @@ app.use(express.json());
 // ======================
 
 
-const BOT_TOKEN = "8901082940:AAHcL9GQnwyoflMdKZDN51K7HaJ1DMBr7dg";
-
-const CHAT_ID = "6217152918";
-
+const BOT_TOKEN = process.env.BOT_TOKEN;
+const CHAT_ID = process.env.CHAT_ID;
 
 
 
@@ -127,6 +125,11 @@ ${review.message}
 // ======================
 
 
-app.listen(3001, ()=>{
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+    console.log("SERVER STARTED");
+});
+
 console.log("KADRY MOSCOW REVIEW SERVER STARTED ON PORT 3001");
 });
