@@ -48,13 +48,7 @@ MOSCOW
 
 <section class="hero">
 
-
-<video autoplay muted loop playsinline class="hero-video">
-
-<source src="video/intro.mp4" type="video/mp4">
-
-</video>
-
+<img src="img/hero.jpg" class="hero-image" alt="Wedding Hero">
 
 <div class="hero-overlay"></div>
 
@@ -157,26 +151,48 @@ LUXURY WEDDING FILMS
 
 
 
-<div class="main-video">
+<div class="main-video video-box"
+data-video="https://rutube.ru/play/embed/6fa5abbc2e2be6d9bfaa30f59af43114/?p=znUy_74YrcXscTGqvptbVQ">
 
 
-<video controls poster="img/hero.jpg">
+<img src="img/film-cover.jpg" class="video-cover">
 
-<source src="video/26.06.2026 Виктория.mp4" type="video/mp4">
 
-</video>
+<button class="play-btn">
+▶
+</button>
 
 
 </div>
 
 
 
-<a href="#" class="download">
 
-Скачать фильм целиком
+
+<div class="film-download">
+
+<h3>
+СМОТРЕТЬ БЕЗ РЕКЛАМЫ
+</h3>
+
+<p>
+Для просмотра полной версии фильма без рекламы 
+и в максимальном качестве нажмите ниже.
+</p>
+
+
+<a href="https://cloud.mail.ru/public/Kqqc/TbSLzQj5k" target="_blank" class="download">
+
+СМОТРЕТЬ / СКАЧАТЬ ФИЛЬМ
 
 </a>
 
+
+<span>
+Full HD • Без рекламы • Оригинальное качество
+</span>
+
+</div>
 
 
 </section>
@@ -335,19 +351,20 @@ LUXURY WEDDING FILMS
 
 
 
-<div class="highlight-grid">
+<div class="highlight-card video-box"
+data-video="https://rutube.ru/play/embed/95c7eb56a14e49dec0027abb8c369d84/?p=_UICYfX1jBfuUB2aMdTqIQ">
 
 
-<div class="highlight-card">
+<img src="img/teaser1.jpg" class="video-cover">
 
-<video controls poster="img/gallery1.jpg">
 
-<source src="video/тизер 1 часть.mp4">
+<button class="play-btn">
+▶
+</button>
 
-</video>
 
 <h3>
-тизер 1-часть
+Тизер 1 часть
 </h3>
 
 </div>
@@ -355,16 +372,23 @@ LUXURY WEDDING FILMS
 
 
 
-<div class="highlight-card">
 
-<video controls poster="img/gallery2.jpg">
 
-<source src="video/тизер 2 часть.mp4">
 
-</video>
+<div class="highlight-card video-box"
+data-video="https://rutube.ru/play/embed/f64af4741ef69ab30fdbc0b2f7568e15/?p=YER1pEPE4gh137TyvSyIUA">
+
+
+<img src="img/teaser2.jpg" class="video-cover">
+
+
+<button class="play-btn">
+▶
+</button>
+
 
 <h3>
-тизер 2-часть
+Тизер 2 часть
 </h3>
 
 </div>
@@ -372,40 +396,57 @@ LUXURY WEDDING FILMS
 
 
 
-<div class="highlight-card">
 
-<video controls poster="img/gallery3.jpg">
 
-<source src="video/Башкалардан болунуп турасын.mp4">
 
-</video>
+
+<div class="highlight-card video-box"
+data-video="https://rutube.ru/play/embed/8161bdc53567706e20069a4d7a7d12ee/?p=ndXYkthdWYYPm-GMoYhdIQ">
+
+
+<img src="img/teaser3.jpg" class="video-cover">
+
+
+<button class="play-btn">
+▶
+</button>
+
 
 <h3>
 Башкалардан болунуп турасын
 </h3>
 
+
 </div>
 
 
 
 
-<div class="highlight-card">
 
-<video controls poster="img/gallery4.jpg">
 
-<source src="video/Ресторан Виктория.mp4">
+<div class="highlight-card video-box"
+data-video="https://rutube.ru/play/embed/f75ec57fce42cd26049a73d3ba9bb343/?p=MWadgrY-OpKRu1EKmYGsNg">
 
-</video>
+
+<img src="img/restaurant2.jpg" class="video-cover">
+
+
+<button class="play-btn">
+▶
+</button>
+
 
 <h3>
 Ресторан Виктория
 </h3>
 
-</div>
-
-
 
 </div>
+
+
+
+
+
 
 
 </section>
@@ -678,6 +719,34 @@ KADRY MOSCOW
 
 
 <script src="script.js"></script>
+
+
+
+
+<script>
+document.querySelectorAll(".video-box").forEach(box => {
+
+    box.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        let video = this.dataset.video;
+
+        this.innerHTML = `
+        <iframe 
+        src="${video}&autoplay=1"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+        </iframe>
+        `;
+
+    });
+
+});
+</script>
+
+
 
 
 </body>
