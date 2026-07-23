@@ -183,30 +183,28 @@ footer.innerHTML +=`
 
 
 
+
 // ==============================
-// SEND REVIEW TO TELEGRAM SERVER
+// SEND REVIEW TO TELEGRAM
 // ==============================
 
 
 async function sendReview(){
 
 
-let name =
-document.getElementById("clientName").value;
+let name = document.getElementById("clientName").value;
 
+let wedding = document.getElementById("weddingInfo").value;
 
-let message =
-document.getElementById("reviewText").value;
+let message = document.getElementById("reviewText").value;
 
-
-let stars =
-document.getElementById("reviewStars").value;
+let stars = document.getElementById("reviewStars").value;
 
 
 
 if(!name || !message){
 
-alert("Заполните все поля");
+alert("Заполните имя и отзыв");
 
 return;
 
@@ -214,11 +212,44 @@ return;
 
 
 
+const BOT_TOKEN = "8901082940:AAHcL9GQnwyoflMdKZDN51K7HaJ1DMBr7dg";
+
+const CHAT_ID = "6217152918";
+
+
+
+let text = `
+
+⭐ Новый отзыв KADRY MOSCOW
+
+
+👤 Имя:
+${name}
+
+
+💍 Свадьба:
+${wedding}
+
+
+⭐ Оценка:
+${stars}
+
+
+💬 Отзыв:
+
+${message}
+
+`;
+
+
+
 try{
 
 
 let response = await fetch(
-"http://localhost:3001/review",
+
+`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+
 {
 
 method:"POST",
@@ -229,38 +260,32 @@ headers:{
 
 },
 
-
 body:JSON.stringify({
 
-name:name,
+chat_id:CHAT_ID,
 
-message:message,
-
-stars:stars
+text:text
 
 })
 
+}
 
-});
+);
+
 
 
 if(response.ok){
 
 
-document.getElementById(
-"reviewResult"
-).innerHTML=
+document.getElementById("reviewResult").innerHTML =
 "Спасибо ❤️ Ваш отзыв отправлен";
 
 
-document.getElementById(
-"clientName"
-).value="";
+document.getElementById("clientName").value="";
 
+document.getElementById("weddingInfo").value="";
 
-document.getElementById(
-"reviewText"
-).value="";
+document.getElementById("reviewText").value="";
 
 
 }
@@ -268,32 +293,30 @@ document.getElementById(
 
 else{
 
-
-alert("Ошибка отправки");
-
+alert("Ошибка Telegram");
 
 }
-
 
 
 }
 
 catch(error){
 
-
 console.log(error);
 
+alert("Ошибка отправки");
 
-alert(
-"Сервер отзывов не запущен"
-);
+}
 
 
 }
 
 
 
-}
+
+
+
+
 
 // VIDEO CLICK PLAY
 
