@@ -294,3 +294,39 @@ alert(
 
 
 }
+
+// VIDEO CLICK PLAY
+
+document.querySelectorAll(".video-box").forEach(video=>{
+
+
+video.addEventListener("click",()=>{
+
+
+let url = video.dataset.video;
+
+
+video.innerHTML = `
+
+<iframe
+
+src="${url}?autoplay=1"
+
+frameborder="0"
+
+allow="autoplay; fullscreen"
+
+allowfullscreen>
+
+</iframe>
+
+`;
+
+
+});
+
+
+});
+
+
+
