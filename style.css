@@ -1,7 +1,7 @@
 /* =====================================
    KADRY MOSCOW
-   Luxury Wedding Gallery 2.0
-   STYLE CSS
+   Luxury Wedding Films
+   CLEAN STYLE CSS
 ===================================== */
 
 
@@ -22,7 +22,6 @@ html{
 body{
 
     background:#080808;
-
     color:#fff;
 
     font-family:'Inter',sans-serif;
@@ -32,25 +31,32 @@ body{
 }
 
 
+
 img,
-video{
+video,
+iframe{
 
     width:100%;
-
     display:block;
 
 }
 
 
+
 a{
 
     text-decoration:none;
-
     color:white;
 
 }
 
 
+
+button{
+
+    font-family:'Inter',sans-serif;
+
+}
 
 
 
@@ -75,58 +81,56 @@ a{
 
     z-index:9999;
 
-    animation:loaderHide 2s forwards;
+    animation:hideLoader 2.5s forwards;
 
 }
+
 
 
 .logo-loader{
 
+    text-align:center;
+
     font-family:'Cormorant Garamond',serif;
 
-    font-size:55px;
+    font-size:60px;
 
-    letter-spacing:10px;
-
-    text-align:center;
+    letter-spacing:12px;
 
     color:#c8a66a;
 
-    animation:logoFade 1.5s infinite alternate;
+    animation:logoPulse 1.5s infinite alternate;
 
 }
 
 
-@keyframes logoFade{
+
+@keyframes logoPulse{
 
     from{
-
         opacity:.3;
-
     }
 
     to{
-
         opacity:1;
-
     }
 
 }
 
 
-@keyframes loaderHide{
+
+@keyframes hideLoader{
 
     0%{
-
         opacity:1;
-
+        visibility:visible;
     }
+
 
     80%{
-
         opacity:1;
-
     }
+
 
     100%{
 
@@ -141,8 +145,6 @@ a{
 
 
 
-
-
 /* =====================================
    HERO
 ===================================== */
@@ -151,6 +153,8 @@ a{
 .hero{
 
     height:100vh;
+
+    min-height:700px;
 
     position:relative;
 
@@ -166,15 +170,40 @@ a{
 
 
 
-.hero-video{
+.hero-image{
 
     position:absolute;
 
     inset:0;
 
+    width:100%;
+
     height:100%;
 
     object-fit:cover;
+
+    animation:heroZoom 20s infinite alternate;
+
+}
+
+
+
+@keyframes heroZoom{
+
+
+from{
+
+    transform:scale(1);
+
+}
+
+
+to{
+
+    transform:scale(1.08);
+
+}
+
 
 }
 
@@ -194,9 +223,13 @@ a{
 
     rgba(0,0,0,.35),
 
-    rgba(0,0,0,.8)
+    rgba(0,0,0,.85)
 
     );
+
+
+
+    z-index:1;
 
 }
 
@@ -210,29 +243,33 @@ a{
 
     text-align:center;
 
-    animation:heroShow 2s ease;
+    animation:heroAppear 1.8s ease;
 
 }
 
 
 
-@keyframes heroShow{
+@keyframes heroAppear{
 
-    from{
 
-        opacity:0;
+from{
 
-        transform:translateY(50px);
+    opacity:0;
 
-    }
+    transform:translateY(50px);
 
-    to{
+}
 
-        opacity:1;
 
-        transform:translateY(0);
 
-    }
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
 
 }
 
@@ -247,7 +284,7 @@ a{
 
     color:#d2b277;
 
-    margin-bottom:40px;
+    margin-bottom:35px;
 
 }
 
@@ -261,21 +298,25 @@ a{
 
     color:#ddd;
 
-    margin-bottom:50px;
+    margin-bottom:45px;
 
 }
 
 
 
+
 .hero h1{
 
-    font-family:'Cormorant Garamond',serif;
 
-    font-size:95px;
+font-family:'Cormorant Garamond',serif;
 
-    line-height:.9;
 
-    font-weight:400;
+font-size:95px;
+
+font-weight:400;
+
+line-height:.9;
+
 
 }
 
@@ -283,7 +324,7 @@ a{
 
 .date{
 
-    margin-top:40px;
+    margin-top:35px;
 
     font-size:18px;
 
@@ -297,72 +338,108 @@ a{
 
 
 
-/* BUTTON */
+/* =====================================
+   BUTTONS
+===================================== */
+
+
+.luxury-btn,
+.download,
+.contact-buttons a{
+
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+border:1px solid #c8a66a;
+
+
+padding:18px 50px;
+
+
+letter-spacing:4px;
+
+
+font-size:13px;
+
+
+transition:.5s;
+
+
+}
+
 
 
 .luxury-btn{
 
-    display:inline-block;
-
     margin-top:60px;
 
-    padding:20px 60px;
-
-    border:1px solid #c8a66a;
-
-    letter-spacing:4px;
-
-    font-size:14px;
-
-    transition:.5s;
-
 }
 
 
 
-.luxury-btn:hover{
+.luxury-btn:hover,
+.download:hover,
+.contact-buttons a:hover{
 
-    background:#c8a66a;
 
-    color:#000;
+background:#c8a66a;
 
-    transform:translateY(-5px);
+color:#000;
+
+transform:translateY(-5px);
 
 }
+
 
 
 
 
 .scroll{
 
-    position:absolute;
 
-    bottom:40px;
+position:absolute;
 
-    left:50%;
 
-    transform:translateX(-50%);
+bottom:40px;
 
-    letter-spacing:5px;
 
-    font-size:12px;
+left:50%;
 
-    color:#ccc;
+
+transform:translateX(-50%);
+
+
+font-size:12px;
+
+
+letter-spacing:6px;
+
+
+color:#ccc;
+
+
+z-index:2;
+
 
 }
 
 
 
-
-
 /* =====================================
-   GENERAL SECTIONS
+   SECTIONS
 ===================================== */
 
 
 .section{
 
-    padding:140px 8%;
+
+padding:140px 8%;
+
 
 }
 
@@ -370,37 +447,60 @@ a{
 
 .section-title{
 
-    display:flex;
 
-    align-items:center;
-
-    gap:25px;
-
-    margin-bottom:50px;
-
-}
+display:flex;
 
 
+align-items:center;
 
-.section-title span{
 
-    color:#c8a66a;
+gap:25px;
 
-    font-size:18px;
+
+margin-bottom:50px;
+
 
 }
+
+
+
+
 
 
 
 .section-title h2{
 
-    font-family:'Cormorant Garamond',serif;
 
-    font-size:60px;
+font-family:'Cormorant Garamond',serif;
 
-    font-weight:400;
 
-    letter-spacing:2px;
+font-size:60px;
+
+
+font-weight:400;
+
+
+letter-spacing:2px;
+
+
+}
+
+
+
+.section-title:after{
+
+
+content:"";
+
+
+width:120px;
+
+
+height:1px;
+
+
+background:#c8a66a;
+
 
 }
 
@@ -409,83 +509,68 @@ a{
 
 .description{
 
-    max-width:600px;
 
-    font-size:20px;
+max-width:650px;
 
-    line-height:1.8;
 
-    color:#aaa;
+font-size:20px;
 
-    margin-bottom:70px;
+
+line-height:1.8;
+
+
+color:#aaa;
+
+
+margin-bottom:70px;
+
+
 }
 
 
 /* =====================================
-   MAIN VIDEO
+   FILM VIDEO
 ===================================== */
 
 
 .main-video{
 
-    max-width:1200px;
 
-    margin:auto;
-
-    position:relative;
-
-    border-radius:5px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 40px 100px rgba(0,0,0,.7);
-
-}
+max-width:1200px;
 
 
-.main-video video{
-
-    aspect-ratio:16/9;
-
-    object-fit:cover;
-
-}
+margin:auto;
 
 
+position:relative;
 
 
-.download{
+overflow:hidden;
 
-    display:block;
 
-    width:max-content;
+border-radius:8px;
 
-    margin:50px auto 0;
 
-    padding:20px 55px;
+box-shadow:0 40px 100px rgba(0,0,0,.7);
 
-    border:1px solid #c8a66a;
 
-    letter-spacing:3px;
+cursor:pointer;
 
-    font-size:13px;
-
-    transition:.5s;
 
 }
 
 
 
-.download:hover{
+.main-video iframe{
 
-    background:#c8a66a;
 
-    color:#000;
+aspect-ratio:16/9;
+
+
+border:0;
+
 
 }
-
-
 
 
 
@@ -514,7 +599,6 @@ a{
 
 
 
-
 .story-item{
 
     position:relative;
@@ -525,11 +609,16 @@ a{
 
     cursor:pointer;
 
+    border-radius:8px;
+
+    transition:.5s;
+
 }
 
 
-
 .story-item img{
+
+    width:100%;
 
     height:100%;
 
@@ -541,23 +630,26 @@ a{
 
 
 
-.story-item:after{
+.story-item::after{
 
-    content:"";
 
-    position:absolute;
+content:"";
 
-    inset:0;
+position:absolute;
 
-    background:
+inset:0;
 
-    linear-gradient(
 
-    transparent,
+background:
 
-    rgba(0,0,0,.85)
+linear-gradient(
 
-    );
+transparent,
+
+rgba(0,0,0,.85)
+
+);
+
 
 }
 
@@ -567,9 +659,9 @@ a{
 
     position:absolute;
 
-    bottom:50px;
+    left:45px;
 
-    left:50px;
+    bottom:45px;
 
     z-index:2;
 
@@ -579,11 +671,15 @@ a{
 
 .story-item h3{
 
-    font-family:'Cormorant Garamond',serif;
 
-    font-size:48px;
+font-family:'Cormorant Garamond',serif;
 
-    font-weight:400;
+
+font-size:48px;
+
+
+font-weight:400;
+
 
 }
 
@@ -591,65 +687,275 @@ a{
 
 .story-item p{
 
-    margin-top:10px;
 
-    color:#c8a66a;
+margin-top:10px;
 
-    letter-spacing:3px;
+
+color:#c8a66a;
+
+
+letter-spacing:3px;
+
+
+font-size:14px;
+
 
 }
-
 
 
 
 .story-item:hover img{
 
-    transform:scale(1.08);
+
+transform:scale(1.08);
+
+
+}
+
+
+.story-item:hover{
+
+    transform:translateY(-10px);
 
 }
 
 
 
+
+/* =====================================
+   HIGHLIGHTS VIDEO CARDS
+===================================== */
+
+
+.highlights{
+
+
+background:#080808;
+
+
+}
+
+
+
+.highlight-card{
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+border-radius:10px;
+
+
+margin-bottom:40px;
+
+
+cursor:pointer;
+
+
+background:#111;
+
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.5);
+
+
+}
+
+
+
+.highlight-card img{
+
+
+aspect-ratio:16/9;
+
+
+object-fit:cover;
+
+
+transition:1s;
+
+
+}
+
+
+
+.highlight-card::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+transparent,
+
+rgba(0,0,0,.8)
+
+);
+
+
+}
+
+
+
+.highlight-card h3{
+
+
+position:absolute;
+
+
+bottom:30px;
+
+
+left:35px;
+
+
+z-index:2;
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:36px;
+
+
+font-weight:400;
+
+
+}
+
+
+
+.highlight-card iframe{
+
+
+aspect-ratio:16/9;
+
+
+border:0;
+
+
+}
+
+
+
+
+
+.highlight-card:hover img{
+
+
+transform:scale(1.08);
+
+
+}
 
 
 
 
 
 /* =====================================
-   HIGHLIGHTS
+   PLAY BUTTON
 ===================================== */
 
 
-.highlights{
+.play-btn{
 
-    background:#080808;
+
+position:absolute;
+
+
+top:50%;
+
+
+left:50%;
+
+
+transform:translate(-50%,-50%);
+
+
+
+width:90px;
+
+
+height:90px;
+
+
+
+border-radius:50%;
+
+
+
+border:1px solid #c8a66a;
+
+
+
+background:rgba(0,0,0,.55);
+
+
+
+color:white;
+
+
+
+font-size:32px;
+
+
+
+display:flex;
+
+
+
+align-items:center;
+
+
+
+justify-content:center;
+
+
+
+cursor:pointer;
+
+
+
+z-index:5;
+
+
+
+transition:.4s;
+
+
 
 }
 
 
 
-.highlight-video{
-
-    max-width:1000px;
-
-    margin:auto;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 30px 80px rgba(0,0,0,.6);
-
-}
+.play-btn:hover{
 
 
+background:#c8a66a;
 
-.highlight-video video{
 
-    aspect-ratio:16/9;
+color:#000;
 
-    object-fit:cover;
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1.1);
+
 
 }
 
@@ -667,7 +973,9 @@ a{
 
 .gallery{
 
-    background:#0b0b0b;
+
+background:#0b0b0b;
+
 
 }
 
@@ -675,9 +983,12 @@ a{
 
 .gallery-grid{
 
-    columns:3;
 
-    column-gap:25px;
+columns:3;
+
+
+column-gap:25px;
+
 
 }
 
@@ -685,13 +996,21 @@ a{
 
 .gallery-grid img{
 
-    margin-bottom:25px;
 
-    border-radius:5px;
+width:100%;
 
-    cursor:pointer;
 
-    transition:.6s;
+margin-bottom:25px;
+
+
+border-radius:8px;
+
+
+cursor:pointer;
+
+
+transition:.6s;
+
 
 }
 
@@ -699,9 +1018,17 @@ a{
 
 .gallery-grid img:hover{
 
-    transform:scale(1.03);
 
-    filter:brightness(1.1);
+transform:scale(1.03);
+
+
+filter:brightness(1.1);
+
+
+box-shadow:
+
+0 30px 60px rgba(0,0,0,.7);
+
 
 }
 
@@ -720,7 +1047,9 @@ a{
 
 .reviews{
 
-    text-align:center;
+
+text-align:center;
+
 
 }
 
@@ -728,15 +1057,24 @@ a{
 
 .review-card{
 
-    max-width:800px;
 
-    margin:70px auto 40px;
+max-width:800px;
 
-    padding:60px;
 
-    background:#111;
+margin:70px auto;
 
-    border:1px solid rgba(200,166,106,.15);
+
+padding:60px;
+
+
+background:#111;
+
+
+border:
+
+1px solid rgba(200,166,106,.15);
+
+
 
 }
 
@@ -744,13 +1082,18 @@ a{
 
 .stars{
 
-    color:#c8a66a;
 
-    font-size:25px;
+color:#c8a66a;
 
-    letter-spacing:8px;
 
-    margin-bottom:30px;
+font-size:25px;
+
+
+letter-spacing:8px;
+
+
+margin-bottom:30px;
+
 
 }
 
@@ -758,11 +1101,15 @@ a{
 
 .review-card p{
 
-    font-family:'Cormorant Garamond',serif;
 
-    font-size:35px;
+font-family:'Cormorant Garamond',serif;
 
-    line-height:1.5;
+
+font-size:35px;
+
+
+line-height:1.5;
+
 
 }
 
@@ -770,45 +1117,15 @@ a{
 
 .review-card h3{
 
-    margin-top:30px;
 
-    color:#aaa;
-
-    font-size:18px;
-
-    font-weight:400;
-
-}
+margin-top:30px;
 
 
+color:#aaa;
 
 
+font-weight:400;
 
-.review-btn{
-
-    background:none;
-
-    color:white;
-
-    border:1px solid #c8a66a;
-
-    padding:18px 55px;
-
-    letter-spacing:3px;
-
-    cursor:pointer;
-
-    transition:.5s;
-
-}
-
-
-
-.review-btn:hover{
-
-    background:#c8a66a;
-
-    color:black;
 
 }
 
@@ -817,6 +1134,219 @@ a{
 
 
 
+
+
+/* =====================================
+   REVIEW FORM
+===================================== */
+
+
+.review-form{
+
+
+max-width:600px;
+
+
+margin:50px auto 0;
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+gap:20px;
+
+
+}
+
+
+
+.review-form input,
+.review-form textarea,
+.review-form select{
+
+
+background:#111;
+
+
+border:
+
+1px solid rgba(200,166,106,.35);
+
+
+
+padding:20px;
+
+
+color:white;
+
+
+font-size:16px;
+
+
+outline:none;
+
+
+font-family:'Inter',sans-serif;
+
+
+}
+
+
+
+.review-form textarea{
+
+
+height:160px;
+
+
+resize:none;
+
+
+}
+
+
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus{
+
+
+border-color:#c8a66a;
+
+
+}
+
+
+
+.review-form button{
+
+
+background:#c8a66a;
+
+
+border:none;
+
+
+padding:18px;
+
+
+font-size:14px;
+
+
+letter-spacing:3px;
+
+
+cursor:pointer;
+
+
+transition:.4s;
+
+
+}
+
+
+
+.review-form button:hover{
+
+
+background:#e4c98c;
+
+
+}
+
+
+
+#reviewResult{
+
+
+color:#c8a66a;
+
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+
+/* =====================================
+   FILM DOWNLOAD
+===================================== */
+
+
+.film-download{
+
+
+text-align:center;
+
+
+margin-top:70px;
+
+
+}
+
+
+
+.film-download h3{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:40px;
+
+
+font-weight:400;
+
+
+}
+
+
+
+.film-download p{
+
+
+color:#aaa;
+
+
+margin:20px auto;
+
+
+max-width:600px;
+
+
+line-height:1.7;
+
+
+}
+
+
+
+.film-download span{
+
+
+display:block;
+
+
+margin-top:25px;
+
+
+color:#777;
+
+
+font-size:13px;
+
+
+letter-spacing:3px;
+
+
+}
 
 
 
@@ -837,11 +1367,21 @@ a{
 
 .contact h2{
 
-    font-family:'Cormorant Garamond',serif;
 
-    font-size:70px;
+font-family:'Cormorant Garamond',serif;
 
-    font-weight:400;
+
+font-size:70px;
+
+
+font-weight:400;
+
+
+max-width:1000px;
+
+
+margin:auto;
+
 
 }
 
@@ -849,55 +1389,36 @@ a{
 
 .contact p{
 
-    color:#aaa;
 
-    margin:30px 0 60px;
+color:#aaa;
 
-    font-size:20px;
+
+font-size:20px;
+
+
+margin:30px 0 60px;
+
 
 }
-
 
 
 
 .contact-buttons{
 
-    display:flex;
 
-    justify-content:center;
+display:flex;
 
-    gap:25px;
 
-    flex-wrap:wrap;
+justify-content:center;
+
+
+gap:25px;
+
+
+flex-wrap:wrap;
+
 
 }
-
-
-
-.contact-buttons a{
-
-    padding:18px 45px;
-
-    border:1px solid #c8a66a;
-
-    letter-spacing:3px;
-
-    transition:.5s;
-
-}
-
-
-
-.contact-buttons a:hover{
-
-    background:#c8a66a;
-
-    color:black;
-
-}
-
-
-
 
 
 
@@ -910,11 +1431,15 @@ a{
 
 footer{
 
-    padding:80px 20px;
 
-    text-align:center;
+padding:80px 20px;
 
-    background:#000;
+
+background:#000;
+
+
+text-align:center;
+
 
 }
 
@@ -922,13 +1447,18 @@ footer{
 
 .footer-logo{
 
-    font-family:'Cormorant Garamond',serif;
 
-    font-size:45px;
+font-family:'Cormorant Garamond',serif;
 
-    letter-spacing:10px;
 
-    color:#c8a66a;
+font-size:45px;
+
+
+letter-spacing:10px;
+
+
+color:#c8a66a;
+
 
 }
 
@@ -936,40 +1466,60 @@ footer{
 
 footer p{
 
-    margin-top:30px;
 
-    color:#777;
+margin-top:30px;
 
-    letter-spacing:3px;
 
-    font-size:13px;
+color:#777;
+
+
+font-size:13px;
+
+
+letter-spacing:3px;
+
+
+line-height:1.8;
+
 
 }
 
 
+
+
+
 /* =====================================
-   SCROLL ANIMATION PREPARE
+   SCROLL ANIMATION
 ===================================== */
+
 
 .section,
 .story-item,
 .gallery-grid img,
 .review-card{
 
-    opacity:0;
 
-    transform:translateY(60px);
+opacity:0;
 
-    transition:1s ease;
+
+transform:translateY(50px);
+
+
+transition:1s ease;
+
 
 }
+
 
 
 .show{
 
-    opacity:1;
 
-    transform:translateY(0);
+opacity:1;
+
+
+transform:translateY(0);
+
 
 }
 
@@ -978,32 +1528,65 @@ footer p{
 
 
 /* =====================================
-   PHOTO LIGHT EFFECT
+   FILM GRAIN EFFECT
 ===================================== */
 
 
-.gallery-grid img{
+.hero::before{
 
-    position:relative;
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+
+
+
+opacity:.25;
+
+
+
+pointer-events:none;
+
+
+
+z-index:1;
+
 
 }
 
 
-.gallery-grid img:hover{
 
-    box-shadow:
-    0 30px 60px rgba(0,0,0,.7);
+
+/* =====================================
+   SELECTION
+===================================== */
+
+
+::selection{
+
+
+background:#c8a66a;
+
+
+color:#000;
+
 
 }
-
-
 
 
 
 
 
 /* =====================================
-   MOBILE RESPONSIVE
+   MOBILE TABLET
 ===================================== */
 
 
@@ -1012,26 +1595,37 @@ footer p{
 
 .hero h1{
 
-    font-size:75px;
+
+font-size:75px;
+
 
 }
+
 
 
 .section-title h2{
 
-    font-size:50px;
+
+font-size:50px;
+
 
 }
+
 
 
 .story-item{
 
-    height:500px;
+
+height:500px;
+
 
 }
 
 
 }
+
+
+
 
 
 
@@ -1042,7 +1636,9 @@ footer p{
 
 .section{
 
-    padding:90px 6%;
+
+padding:90px 6%;
+
 
 }
 
@@ -1050,7 +1646,12 @@ footer p{
 
 .hero{
 
-    height:100svh;
+
+height:100svh;
+
+
+min-height:600px;
+
 
 }
 
@@ -1058,9 +1659,12 @@ footer p{
 
 .brand{
 
-    font-size:17px;
 
-    letter-spacing:7px;
+font-size:17px;
+
+
+letter-spacing:7px;
+
 
 }
 
@@ -1068,7 +1672,9 @@ footer p{
 
 .hero h1{
 
-    font-size:55px;
+
+font-size:55px;
+
 
 }
 
@@ -1076,9 +1682,12 @@ footer p{
 
 .small-title{
 
-    font-size:11px;
 
-    letter-spacing:4px;
+font-size:11px;
+
+
+letter-spacing:4px;
+
 
 }
 
@@ -1086,9 +1695,12 @@ footer p{
 
 .date{
 
-    font-size:14px;
 
-    letter-spacing:5px;
+font-size:14px;
+
+
+letter-spacing:5px;
+
 
 }
 
@@ -1096,25 +1708,35 @@ footer p{
 
 .section-title{
 
-    display:block;
+
+display:block;
+
 
 }
 
 
 
-.section-title span{
-
-    display:block;
-
-    margin-bottom:20px;
-
-}
 
 
 
 .section-title h2{
 
-    font-size:42px;
+
+font-size:42px;
+
+
+}
+
+
+
+.section-title:after{
+
+
+margin-top:20px;
+
+
+margin-left:0;
+
 
 }
 
@@ -1122,7 +1744,9 @@ footer p{
 
 .description{
 
-    font-size:17px;
+
+font-size:17px;
+
 
 }
 
@@ -1130,7 +1754,9 @@ footer p{
 
 .story-grid{
 
-    grid-template-columns:1fr;
+
+grid-template-columns:1fr;
+
 
 }
 
@@ -1138,7 +1764,9 @@ footer p{
 
 .story-item{
 
-    height:450px;
+
+height:450px;
+
 
 }
 
@@ -1146,9 +1774,12 @@ footer p{
 
 .story-item div{
 
-    left:30px;
 
-    bottom:35px;
+left:30px;
+
+
+bottom:30px;
+
 
 }
 
@@ -1156,7 +1787,9 @@ footer p{
 
 .story-item h3{
 
-    font-size:38px;
+
+font-size:38px;
+
 
 }
 
@@ -1164,7 +1797,9 @@ footer p{
 
 .gallery-grid{
 
-    columns:2;
+
+columns:2;
+
 
 }
 
@@ -1172,7 +1807,9 @@ footer p{
 
 .review-card{
 
-    padding:35px 20px;
+
+padding:35px 20px;
+
 
 }
 
@@ -1180,7 +1817,9 @@ footer p{
 
 .review-card p{
 
-    font-size:27px;
+
+font-size:27px;
+
 
 }
 
@@ -1188,13 +1827,36 @@ footer p{
 
 .contact h2{
 
-    font-size:45px;
+
+font-size:45px;
+
+
+}
+
+
+
+.contact-buttons{
+
+
+flex-direction:column;
+
+
+}
+
+
+
+.contact-buttons a{
+
+
+width:100%;
+
 
 }
 
 
 
 }
+
 
 
 
@@ -1209,7 +1871,12 @@ footer p{
 
 .logo-loader{
 
-    font-size:35px;
+
+font-size:35px;
+
+
+letter-spacing:7px;
+
 
 }
 
@@ -1217,15 +1884,33 @@ footer p{
 
 .hero h1{
 
-    font-size:42px;
+
+font-size:42px;
+
 
 }
 
 
 
-.luxury-btn{
+.brand{
 
-    padding:18px 35px;
+
+font-size:15px;
+
+
+letter-spacing:5px;
+
+
+}
+
+
+
+.luxury-btn,
+.download{
+
+
+padding:16px 30px;
+
 
 }
 
@@ -1233,7 +1918,9 @@ footer p{
 
 .section-title h2{
 
-    font-size:34px;
+
+font-size:34px;
+
 
 }
 
@@ -1241,15 +1928,9 @@ footer p{
 
 .gallery-grid{
 
-    columns:1;
 
-}
+columns:1;
 
-
-
-.gallery-grid img{
-
-    margin-bottom:20px;
 
 }
 
@@ -1257,7 +1938,9 @@ footer p{
 
 .story-item{
 
-    height:380px;
+
+height:380px;
+
 
 }
 
@@ -1265,23 +1948,51 @@ footer p{
 
 .story-item h3{
 
-    font-size:32px;
+
+font-size:32px;
+
 
 }
 
 
 
-.contact-buttons{
+.play-btn{
 
-    flex-direction:column;
+
+width:70px;
+
+
+height:70px;
+
+
+font-size:25px;
+
 
 }
 
 
 
-.contact-buttons a{
+.highlight-card h3{
 
-    width:100%;
+
+font-size:28px;
+
+
+left:20px;
+
+
+bottom:20px;
+
+
+}
+
+
+
+.contact h2{
+
+
+font-size:35px;
+
 
 }
 
@@ -1289,302 +2000,15 @@ footer p{
 
 .footer-logo{
 
-    font-size:32px;
 
-}
-
+font-size:32px;
 
 
-}
-
-
-
-
-
-
-
-
-
-/* =====================================
-   CINEMATIC EFFECTS
-===================================== */
-
-
-.hero-video{
-
-    animation:zoomVideo 20s infinite alternate;
-
-}
-
-
-
-@keyframes zoomVideo{
-
-
-from{
-
-    transform:scale(1);
-
-}
-
-
-to{
-
-    transform:scale(1.08);
-
-}
+letter-spacing:6px;
 
 
 }
 
 
-
-
-
-
-
-/* GOLD LINE EFFECT */
-
-
-.section-title:after{
-
-    content:"";
-
-    height:1px;
-
-    width:120px;
-
-    background:#c8a66a;
-
-    display:block;
-
-    margin-left:20px;
-
 }
-
-
-
-
-
-
-
-/* SMOOTH BUTTON PRESS */
-
-
-a,
-button{
-
-    -webkit-tap-highlight-color:transparent;
-
-}
-
-
-
-
-
-
-/* DARK FILM GRAIN EFFECT */
-
-
-.hero:before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
-
-    opacity:.25;
-
-    pointer-events:none;
-
-    z-index:3;
-
-}
-
-
-
-
-
-
-
-/* SELECTION COLOR */
-
-
-::selection{
-
-    background:#c8a66a;
-
-    color:#000;
-
-}
-
-/* REVIEW FORM */
-
-.review-form{
-
-max-width:600px;
-
-margin:60px auto 0;
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-
-
-.review-form input,
-.review-form textarea{
-
-
-background:#111;
-
-border:1px solid rgba(200,166,106,.3);
-
-color:white;
-
-padding:20px;
-
-font-size:16px;
-
-font-family:Inter,sans-serif;
-
-outline:none;
-
-
-}
-
-
-
-.review-form textarea{
-
-height:180px;
-
-resize:none;
-
-}
-
-
-
-.review-form input:focus,
-.review-form textarea:focus{
-
-border-color:#c8a66a;
-
-}
-
-
-
-.review-form button{
-
-
-background:#c8a66a;
-
-border:none;
-
-padding:20px;
-
-font-size:14px;
-
-letter-spacing:4px;
-
-cursor:pointer;
-
-transition:.4s;
-
-
-}
-
-
-
-.review-form button:hover{
-
-
-background:#e4c98c;
-
-
-}
-
-
-
-
-.review-form{
-
-max-width:600px;
-
-margin:50px auto;
-
-display:flex;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-
-.review-form input,
-.review-form textarea{
-
-background:#111;
-
-border:1px solid rgba(200,166,106,.4);
-
-padding:20px;
-
-color:white;
-
-font-size:16px;
-
-font-family:Inter,sans-serif;
-
-}
-
-
-
-.review-form textarea{
-
-height:160px;
-
-resize:none;
-
-}
-
-
-
-.review-form button{
-
-background:#c8a66a;
-
-border:none;
-
-padding:18px;
-
-letter-spacing:3px;
-
-cursor:pointer;
-
-font-size:14px;
-
-}
-
-
-
-#reviewResult{
-
-color:#c8a66a;
-
-font-size:18px;
-
-}
-
-
-
-
 
