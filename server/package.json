@@ -1,18 +1,2014 @@
-{
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "axios": "^1.18.1",
-    "cors": "^2.8.6",
-    "express": "^5.2.1"
-  }
+/* =====================================
+   KADRY MOSCOW
+   Luxury Wedding Films
+   CLEAN STYLE CSS
+===================================== */
+
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    background:#080808;
+    color:#fff;
+
+    font-family:'Inter',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+
+img,
+video,
+iframe{
+
+    width:100%;
+    display:block;
+
+}
+
+
+
+a{
+
+    text-decoration:none;
+    color:white;
+
+}
+
+
+
+button{
+
+    font-family:'Inter',sans-serif;
+
+}
+
+
+
+/* =====================================
+   PRELOADER
+===================================== */
+
+
+.preloader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050505;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    animation:hideLoader 2.5s forwards;
+
+}
+
+
+
+.logo-loader{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:60px;
+
+    letter-spacing:12px;
+
+    color:#c8a66a;
+
+    animation:logoPulse 1.5s infinite alternate;
+
+}
+
+
+
+@keyframes logoPulse{
+
+    from{
+        opacity:.3;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+
+@keyframes hideLoader{
+
+    0%{
+        opacity:1;
+        visibility:visible;
+    }
+
+
+    80%{
+        opacity:1;
+    }
+
+
+    100%{
+
+        opacity:0;
+
+        visibility:hidden;
+
+    }
+
+}
+
+
+
+
+/* =====================================
+   HERO
+===================================== */
+
+
+.hero{
+
+    height:100vh;
+
+    min-height:700px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+}
+
+
+
+.hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    animation:heroZoom 20s infinite alternate;
+
+}
+
+
+
+@keyframes heroZoom{
+
+
+from{
+
+    transform:scale(1);
+
+}
+
+
+to{
+
+    transform:scale(1.08);
+
+}
+
+
+}
+
+
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    to bottom,
+
+    rgba(0,0,0,.35),
+
+    rgba(0,0,0,.85)
+
+    );
+
+
+
+    z-index:1;
+
+}
+
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    animation:heroAppear 1.8s ease;
+
+}
+
+
+
+@keyframes heroAppear{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+}
+
+
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+.brand{
+
+    font-size:22px;
+
+    letter-spacing:12px;
+
+    color:#d2b277;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.small-title{
+
+    font-size:14px;
+
+    letter-spacing:7px;
+
+    color:#ddd;
+
+    margin-bottom:45px;
+
+}
+
+
+
+
+.hero h1{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:95px;
+
+font-weight:400;
+
+line-height:.9;
+
+
+}
+
+
+
+.date{
+
+    margin-top:35px;
+
+    font-size:18px;
+
+    letter-spacing:8px;
+
+    color:#ddd;
+
+}
+
+
+
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+
+.luxury-btn,
+.download,
+.contact-buttons a{
+
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+border:1px solid #c8a66a;
+
+
+padding:18px 50px;
+
+
+letter-spacing:4px;
+
+
+font-size:13px;
+
+
+transition:.5s;
+
+
+}
+
+
+
+.luxury-btn{
+
+    margin-top:60px;
+
+}
+
+
+
+.luxury-btn:hover,
+.download:hover,
+.contact-buttons a:hover{
+
+
+background:#c8a66a;
+
+color:#000;
+
+transform:translateY(-5px);
+
+}
+
+
+
+
+
+.scroll{
+
+
+position:absolute;
+
+
+bottom:40px;
+
+
+left:50%;
+
+
+transform:translateX(-50%);
+
+
+font-size:12px;
+
+
+letter-spacing:6px;
+
+
+color:#ccc;
+
+
+z-index:2;
+
+
+}
+
+
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+
+.section{
+
+
+padding:140px 8%;
+
+
+}
+
+
+
+.section-title{
+
+
+display:flex;
+
+
+align-items:center;
+
+
+gap:25px;
+
+
+margin-bottom:50px;
+
+
+}
+
+
+
+
+
+
+
+.section-title h2{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:60px;
+
+
+font-weight:400;
+
+
+letter-spacing:2px;
+
+
+}
+
+
+
+.section-title:after{
+
+
+content:"";
+
+
+width:120px;
+
+
+height:1px;
+
+
+background:#c8a66a;
+
+
+}
+
+
+
+
+.description{
+
+
+max-width:650px;
+
+
+font-size:20px;
+
+
+line-height:1.8;
+
+
+color:#aaa;
+
+
+margin-bottom:70px;
+
+
+}
+
+
+/* =====================================
+   FILM VIDEO
+===================================== */
+
+
+.main-video{
+
+
+max-width:1200px;
+
+
+margin:auto;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+border-radius:8px;
+
+
+box-shadow:0 40px 100px rgba(0,0,0,.7);
+
+
+cursor:pointer;
+
+
+}
+
+
+
+.main-video iframe{
+
+
+aspect-ratio:16/9;
+
+
+border:0;
+
+
+}
+
+
+
+/* =====================================
+   STORY SECTION
+===================================== */
+
+
+.story{
+
+    background:#0b0b0b;
+
+}
+
+
+
+.story-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+
+.story-item{
+
+    position:relative;
+
+    height:600px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    border-radius:8px;
+
+    transition:.5s;
+
+}
+
+
+.story-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+
+
+.story-item::after{
+
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+transparent,
+
+rgba(0,0,0,.85)
+
+);
+
+
+}
+
+
+
+.story-item div{
+
+    position:absolute;
+
+    left:45px;
+
+    bottom:45px;
+
+    z-index:2;
+
+}
+
+
+
+.story-item h3{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:48px;
+
+
+font-weight:400;
+
+
+}
+
+
+
+.story-item p{
+
+
+margin-top:10px;
+
+
+color:#c8a66a;
+
+
+letter-spacing:3px;
+
+
+font-size:14px;
+
+
+}
+
+
+
+.story-item:hover img{
+
+
+transform:scale(1.08);
+
+
+}
+
+
+.story-item:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+
+/* =====================================
+   HIGHLIGHTS VIDEO CARDS
+===================================== */
+
+
+.highlights{
+
+
+background:#080808;
+
+
+}
+
+
+
+.highlight-card{
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+border-radius:10px;
+
+
+margin-bottom:40px;
+
+
+cursor:pointer;
+
+
+background:#111;
+
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.5);
+
+
+}
+
+
+
+.highlight-card img{
+
+
+aspect-ratio:16/9;
+
+
+object-fit:cover;
+
+
+transition:1s;
+
+
+}
+
+
+
+.highlight-card::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+transparent,
+
+rgba(0,0,0,.8)
+
+);
+
+
+}
+
+
+
+.highlight-card h3{
+
+
+position:absolute;
+
+
+bottom:30px;
+
+
+left:35px;
+
+
+z-index:2;
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:36px;
+
+
+font-weight:400;
+
+
+}
+
+
+
+.highlight-card iframe{
+
+
+aspect-ratio:16/9;
+
+
+border:0;
+
+
+}
+
+
+
+
+
+.highlight-card:hover img{
+
+
+transform:scale(1.08);
+
+
+}
+
+
+
+
+
+/* =====================================
+   PLAY BUTTON
+===================================== */
+
+
+.play-btn{
+
+
+position:absolute;
+
+
+top:50%;
+
+
+left:50%;
+
+
+transform:translate(-50%,-50%);
+
+
+
+width:90px;
+
+
+height:90px;
+
+
+
+border-radius:50%;
+
+
+
+border:1px solid #c8a66a;
+
+
+
+background:rgba(0,0,0,.55);
+
+
+
+color:white;
+
+
+
+font-size:32px;
+
+
+
+display:flex;
+
+
+
+align-items:center;
+
+
+
+justify-content:center;
+
+
+
+cursor:pointer;
+
+
+
+z-index:5;
+
+
+
+transition:.4s;
+
+
+
+}
+
+
+
+.play-btn:hover{
+
+
+background:#c8a66a;
+
+
+color:#000;
+
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1.1);
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   GALLERY
+===================================== */
+
+
+.gallery{
+
+
+background:#0b0b0b;
+
+
+}
+
+
+
+.gallery-grid{
+
+
+columns:3;
+
+
+column-gap:25px;
+
+
+}
+
+
+
+.gallery-grid img{
+
+
+width:100%;
+
+
+margin-bottom:25px;
+
+
+border-radius:8px;
+
+
+cursor:pointer;
+
+
+transition:.6s;
+
+
+}
+
+
+
+.gallery-grid img:hover{
+
+
+transform:scale(1.03);
+
+
+filter:brightness(1.1);
+
+
+box-shadow:
+
+0 30px 60px rgba(0,0,0,.7);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================================
+   REVIEWS
+===================================== */
+
+
+.reviews{
+
+
+text-align:center;
+
+
+}
+
+
+
+.review-card{
+
+
+max-width:800px;
+
+
+margin:70px auto;
+
+
+padding:60px;
+
+
+background:#111;
+
+
+border:
+
+1px solid rgba(200,166,106,.15);
+
+
+
+}
+
+
+
+.stars{
+
+
+color:#c8a66a;
+
+
+font-size:25px;
+
+
+letter-spacing:8px;
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+.review-card p{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:35px;
+
+
+line-height:1.5;
+
+
+}
+
+
+
+.review-card h3{
+
+
+margin-top:30px;
+
+
+color:#aaa;
+
+
+font-weight:400;
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+   REVIEW FORM
+===================================== */
+
+
+.review-form{
+
+
+max-width:600px;
+
+
+margin:50px auto 0;
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+gap:20px;
+
+
+}
+
+
+
+.review-form input,
+.review-form textarea,
+.review-form select{
+
+
+background:#111;
+
+
+border:
+
+1px solid rgba(200,166,106,.35);
+
+
+
+padding:20px;
+
+
+color:white;
+
+
+font-size:16px;
+
+
+outline:none;
+
+
+font-family:'Inter',sans-serif;
+
+
+}
+
+
+
+.review-form textarea{
+
+
+height:160px;
+
+
+resize:none;
+
+
+}
+
+
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus{
+
+
+border-color:#c8a66a;
+
+
+}
+
+
+
+.review-form button{
+
+
+background:#c8a66a;
+
+
+border:none;
+
+
+padding:18px;
+
+
+font-size:14px;
+
+
+letter-spacing:3px;
+
+
+cursor:pointer;
+
+
+transition:.4s;
+
+
+}
+
+
+
+.review-form button:hover{
+
+
+background:#e4c98c;
+
+
+}
+
+
+
+#reviewResult{
+
+
+color:#c8a66a;
+
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+
+/* =====================================
+   FILM DOWNLOAD
+===================================== */
+
+
+.film-download{
+
+
+text-align:center;
+
+
+margin-top:70px;
+
+
+}
+
+
+
+.film-download h3{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:40px;
+
+
+font-weight:400;
+
+
+}
+
+
+
+.film-download p{
+
+
+color:#aaa;
+
+
+margin:20px auto;
+
+
+max-width:600px;
+
+
+line-height:1.7;
+
+
+}
+
+
+
+.film-download span{
+
+
+display:block;
+
+
+margin-top:25px;
+
+
+color:#777;
+
+
+font-size:13px;
+
+
+letter-spacing:3px;
+
+
+}
+
+
+
+/* =====================================
+   CONTACT
+===================================== */
+
+
+.contact{
+
+    text-align:center;
+
+    background:#050505;
+
+}
+
+
+
+.contact h2{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:70px;
+
+
+font-weight:400;
+
+
+max-width:1000px;
+
+
+margin:auto;
+
+
+}
+
+
+
+.contact p{
+
+
+color:#aaa;
+
+
+font-size:20px;
+
+
+margin:30px 0 60px;
+
+
+}
+
+
+
+.contact-buttons{
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+gap:25px;
+
+
+flex-wrap:wrap;
+
+
+}
+
+
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+
+footer{
+
+
+padding:80px 20px;
+
+
+background:#000;
+
+
+text-align:center;
+
+
+}
+
+
+
+.footer-logo{
+
+
+font-family:'Cormorant Garamond',serif;
+
+
+font-size:45px;
+
+
+letter-spacing:10px;
+
+
+color:#c8a66a;
+
+
+}
+
+
+
+footer p{
+
+
+margin-top:30px;
+
+
+color:#777;
+
+
+font-size:13px;
+
+
+letter-spacing:3px;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+
+
+/* =====================================
+   SCROLL ANIMATION
+===================================== */
+
+
+.section,
+.story-item,
+.gallery-grid img,
+.review-card{
+
+
+opacity:0;
+
+
+transform:translateY(50px);
+
+
+transition:1s ease;
+
+
+}
+
+
+
+.show{
+
+
+opacity:1;
+
+
+transform:translateY(0);
+
+
+}
+
+
+
+
+
+/* =====================================
+   FILM GRAIN EFFECT
+===================================== */
+
+
+.hero::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+
+
+
+opacity:.25;
+
+
+
+pointer-events:none;
+
+
+
+z-index:1;
+
+
+}
+
+
+
+
+/* =====================================
+   SELECTION
+===================================== */
+
+
+::selection{
+
+
+background:#c8a66a;
+
+
+color:#000;
+
+
+}
+
+
+
+
+
+/* =====================================
+   MOBILE TABLET
+===================================== */
+
+
+@media(max-width:1200px){
+
+
+.hero h1{
+
+
+font-size:75px;
+
+
+}
+
+
+
+.section-title h2{
+
+
+font-size:50px;
+
+
+}
+
+
+
+.story-item{
+
+
+height:500px;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+.section{
+
+
+padding:90px 6%;
+
+
+}
+
+
+
+.hero{
+
+
+height:100svh;
+
+
+min-height:600px;
+
+
+}
+
+
+
+.brand{
+
+
+font-size:17px;
+
+
+letter-spacing:7px;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:55px;
+
+
+}
+
+
+
+.small-title{
+
+
+font-size:11px;
+
+
+letter-spacing:4px;
+
+
+}
+
+
+
+.date{
+
+
+font-size:14px;
+
+
+letter-spacing:5px;
+
+
+}
+
+
+
+.section-title{
+
+
+display:block;
+
+
+}
+
+
+
+
+
+
+.section-title h2{
+
+
+font-size:42px;
+
+
+}
+
+
+
+.section-title:after{
+
+
+margin-top:20px;
+
+
+margin-left:0;
+
+
+}
+
+
+
+.description{
+
+
+font-size:17px;
+
+
+}
+
+
+
+.story-grid{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.story-item{
+
+
+height:450px;
+
+
+}
+
+
+
+.story-item div{
+
+
+left:30px;
+
+
+bottom:30px;
+
+
+}
+
+
+
+.story-item h3{
+
+
+font-size:38px;
+
+
+}
+
+
+
+.gallery-grid{
+
+
+columns:2;
+
+
+}
+
+
+
+.review-card{
+
+
+padding:35px 20px;
+
+
+}
+
+
+
+.review-card p{
+
+
+font-size:27px;
+
+
+}
+
+
+
+.contact h2{
+
+
+font-size:45px;
+
+
+}
+
+
+
+.contact-buttons{
+
+
+flex-direction:column;
+
+
+}
+
+
+
+.contact-buttons a{
+
+
+width:100%;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+
+.logo-loader{
+
+
+font-size:35px;
+
+
+letter-spacing:7px;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:42px;
+
+
+}
+
+
+
+.brand{
+
+
+font-size:15px;
+
+
+letter-spacing:5px;
+
+
+}
+
+
+
+.luxury-btn,
+.download{
+
+
+padding:16px 30px;
+
+
+}
+
+
+
+.section-title h2{
+
+
+font-size:34px;
+
+
+}
+
+
+
+.gallery-grid{
+
+
+columns:1;
+
+
+}
+
+
+
+.story-item{
+
+
+height:380px;
+
+
+}
+
+
+
+.story-item h3{
+
+
+font-size:32px;
+
+
+}
+
+
+
+.play-btn{
+
+
+width:70px;
+
+
+height:70px;
+
+
+font-size:25px;
+
+
+}
+
+
+
+.highlight-card h3{
+
+
+font-size:28px;
+
+
+left:20px;
+
+
+bottom:20px;
+
+
+}
+
+
+
+.contact h2{
+
+
+font-size:35px;
+
+
+}
+
+
+
+.footer-logo{
+
+
+font-size:32px;
+
+
+letter-spacing:6px;
+
+
+}
+
+
+}
+
