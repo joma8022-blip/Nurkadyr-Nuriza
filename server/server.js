@@ -132,4 +132,3 @@ app.listen(PORT, () => {
 });
 
 console.log("KADRY MOSCOW REVIEW SERVER STARTED ON PORT 3001");
-});
